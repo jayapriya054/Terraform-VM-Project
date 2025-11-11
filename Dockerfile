@@ -1,5 +1,5 @@
 # Use a lightweight Python base image
-FROM --platform=linux/amd64 python:3.12-slim
+FROM --platform=linux/amd64 python:3.12-slim     #make sure this architecture match with the EC2 instance architecture
 
 # Set working directory inside the container
 WORKDIR /app
