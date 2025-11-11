@@ -15,7 +15,7 @@ sudo systemctl enable docker
 sudo usermod -aG docker ubuntu
 newgrp docker
 
-sudo docker login -u jayapriya054 -p Jayamano@95
+sudo docker login -u jayapriya054 -p *********
 
 # Pull your Flask Docker image from Docker Hub
 sudo docker pull Jayapriya054/frontend
