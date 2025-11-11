@@ -1,6 +1,6 @@
-1. Created a python application
+1.Created a python application
    
-2. Build dockerimage for python app and pushed it to docker hub.
+2.Build dockerimage for python app and pushed it to docker hub.
    
 3.Terraform Infrastructure
 Created VPC, 2 subnets, route table, and security groups.
@@ -30,7 +30,7 @@ Adds ubuntu user to Docker group.
 Pulls Docker image from Docker Hub.
 Runs container mapping host port → container port
 
-7. Post Deployment, app is accessed via EC2 instance public IP.
+7.Post Deployment, app is accessed via EC2 instance public IP.
 
 
 
