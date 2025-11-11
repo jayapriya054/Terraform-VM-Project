@@ -1,4 +1,4 @@
-1.Created a python application
+1.Created a simple python application
    
 2.Build dockerimage for python app and pushed it to docker hub.
    
