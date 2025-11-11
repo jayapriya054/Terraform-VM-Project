@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-1"
+  region = var.region
   profile = "default"
 }
 
@@ -22,7 +22,7 @@ resource "aws_vpc" "Vpc" {
 
 resource "aws_subnet" "Subnet1" {
   vpc_id     = aws_vpc.Vpc.id
-  availability_zone = "us-west-1a"
+  availability_zone = var.availability_zone[0]
   map_public_ip_on_launch = true
   cidr_block = "10.0.1.0/24"
   tags = {
@@ -32,7 +32,7 @@ resource "aws_subnet" "Subnet1" {
 
 resource "aws_subnet" "Subnet2" {
   vpc_id     = aws_vpc.Vpc.id
-  availability_zone = "us-west-1c"
+  availability_zone = var.availability_zone[1]
   map_public_ip_on_launch = true
   cidr_block = "10.0.2.0/24"
   tags = {
@@ -42,7 +42,7 @@ resource "aws_subnet" "Subnet2" {
 
 resource "aws_internet_gateway" "Internet_Gateway" {
     vpc_id = aws_vpc.Vpc.id
-    region = "us-west-1"
+    region = var.region
     tags = {
         Name = "Internet_Gateway"
   }
@@ -72,9 +72,9 @@ resource "aws_route_table_association" "rt_private_ass_2" {
 }
 
 resource "aws_instance" "Machine1" {
-  ami           = "ami-0e6a50b0059fd2cc3"
-  region = "us-west-1"
-  instance_type = "t3.micro"
+  ami           = var.ami
+  region = var.region
+  instance_type = var.instance_type
   key_name = "jayamano1"
   subnet_id = aws_subnet.Subnet1.id
   vpc_security_group_ids = [aws_security_group.Security_Group.id]
@@ -85,9 +85,9 @@ resource "aws_instance" "Machine1" {
   }
 }
 resource "aws_instance" "Machine2" {
-  ami           = "ami-0e6a50b0059fd2cc3"
-  region = "us-west-1"
-  instance_type = "t3.micro"
+  ami           = var.ami
+  region = var.region
+  instance_type = var.instance_type
   key_name = "jayamano1"
   subnet_id = aws_subnet.Subnet1.id
   vpc_security_group_ids = [aws_security_group.Security_Group.id]
@@ -98,9 +98,9 @@ resource "aws_instance" "Machine2" {
   }
 }
 resource "aws_instance" "Machine3" {
-  ami           = "ami-0e6a50b0059fd2cc3"
-  region = "us-west-1"
-  instance_type = "t3.micro"
+  ami           = var.ami
+  region = var.region
+  instance_type = var.instance_type
   key_name = "jayamano1"
   subnet_id = aws_subnet.Subnet2.id
   vpc_security_group_ids = [aws_security_group.Security_Group.id]
