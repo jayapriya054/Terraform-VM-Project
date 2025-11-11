@@ -1,6 +1,6 @@
 1.Created a simple python application
    
-2.Build dockerimage for python app and pushed it to docker hub.
+2.Built dockerimage for python app and pushed it to docker hub.
    
 3.Terraform Infrastructure:
 Created VPC, 2 subnets, route table, and security groups.
