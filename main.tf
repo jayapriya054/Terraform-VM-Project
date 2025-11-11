@@ -75,7 +75,7 @@ resource "aws_instance" "Machine1" {
   ami           = var.ami
   region = var.region
   instance_type = var.instance_type
-  key_name = "jayamano1"
+  key_name = var.key_name
   subnet_id = aws_subnet.Subnet1.id
   vpc_security_group_ids = [aws_security_group.Security_Group.id]
   monitoring = false
@@ -88,7 +88,7 @@ resource "aws_instance" "Machine2" {
   ami           = var.ami
   region = var.region
   instance_type = var.instance_type
-  key_name = "jayamano1"
+  key_name = var.key_name
   subnet_id = aws_subnet.Subnet1.id
   vpc_security_group_ids = [aws_security_group.Security_Group.id]
   monitoring = false
@@ -101,7 +101,7 @@ resource "aws_instance" "Machine3" {
   ami           = var.ami
   region = var.region
   instance_type = var.instance_type
-  key_name = "jayamano1"
+  key_name = var.key_name
   subnet_id = aws_subnet.Subnet2.id
   vpc_security_group_ids = [aws_security_group.Security_Group.id]
   monitoring = false
