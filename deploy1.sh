@@ -21,6 +21,6 @@ sudo docker login -u jayapriya054 -p *********
 sudo docker pull Jayapriya054/frontend
 
 # Run the Flask container
-# Maps host port 80 to container port 5000 (Flask default)
+# Maps host port 8080 to container port 5000 (Flask default)
 sudo docker run -d -p 8080:5000 Jayapriya054/frontend
 
