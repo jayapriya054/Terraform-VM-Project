@@ -32,5 +32,7 @@ Runs container mapping host port → container port
 
 7.Post Deployment, app is accessed via EC2 instance's public IP.
 
+8.Statefile will be stored in remotebackend S3 bucket.
+
 
 
