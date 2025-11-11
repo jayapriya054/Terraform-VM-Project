@@ -1,3 +1,8 @@
+
+“Used Terraform to create AWS infrastructure and deploy a containerized application in a preview environment for testing before staging or production.”
+
+
+
 1.Created a simple python application
    
 2.Built dockerimage for python app and pushed it to docker hub.
@@ -32,7 +37,7 @@ Runs container mapping host port → container port
 
 7.Post Deployment, app is accessed via EC2 instance's public IP.
 
-8.Statefile will be stored in remotebackend S3 bucket.
+8.Statefile will be stored in remotebackend S3 bucket in preview env created.
 
 
 
