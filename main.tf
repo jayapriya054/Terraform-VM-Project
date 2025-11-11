@@ -103,7 +103,7 @@ resource "aws_instance" "Machine3" {
   instance_type = "t3.micro"
   key_name = "jayamano1"
   subnet_id = aws_subnet.Subnet2.id
-  vpc_security_group_ids = [aws_security_group.Security_Group_b.id]
+  vpc_security_group_ids = [aws_security_group.Security_Group.id]
   monitoring = false
   user_data = file("deploy1.sh")
   tags = {
@@ -222,5 +222,14 @@ resource "aws_lb_listener" "lb_listener_subnet2" {
   default_action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.TargetGroup2.arn
+  }
+}
+
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "s3-demo-bucket-jp"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
   }
 }
